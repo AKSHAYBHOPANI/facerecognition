@@ -43,7 +43,7 @@ onSubmitSignIn = () => {
   render() {
     const { onRouteChange } = this.props;
      return (
-        <div className="mw7 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10 f1 w-7 ba">
+        <div className="mw7 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10 f1 ba">
         <article className="pa4 black-80" > Register
         <form action="sign-up_submit" method="get" accept-charset="utf-8">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
