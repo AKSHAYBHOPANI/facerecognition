@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import './App.css';
 import Navigation from './Components/Navigation/Navigation';
@@ -14,17 +13,6 @@ const app = new Clarifai.App({
   apiKey: '3c02a31f629f4c1eb5dd0767bcd9503b'
  });
 
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 30,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    }
-  }
-}
 const initialState = {
       input: '',
       imageUrl: '',
@@ -117,7 +105,7 @@ onRouteChange = (route) => {
      const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <div className="App">
-      <Navigation isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange}/>
+      <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
       { this.state.route === 'home'
         ? <div>
       <Logo/>
@@ -129,7 +117,7 @@ onRouteChange = (route) => {
       onInputChange={this.onInputChange} 
       onButtonSubmit={this.onButtonSubmit}/>
       
-      <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
+      <FaceRecognition box={box} imageUrl={imageUrl} />
       </div>
       : (
          route === 'SignIn'
